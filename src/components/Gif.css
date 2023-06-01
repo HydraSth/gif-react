@@ -1,0 +1,38 @@
+.gif{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0.5vw 1vw;
+    padding: 0px 10px;
+}
+.gif video{
+    height: 150px;
+    max-width: 50%;
+    border-radius: 5px;
+    background-size: contain;
+    object-fit: contain;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(43, 43, 43);
+}
+
+.bodyCenter{
+    display: flex;
+    flex-basis: calc(100% / 3);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+input{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #dfdfdf;
+    box-shadow: 1px 1px 5px #ccc;
+    margin-bottom: 1dvw;
+}
