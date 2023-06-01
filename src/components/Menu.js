@@ -1,12 +1,8 @@
-import React,{useState,useEffect} from "react";
+import React,{useState} from "react";
 import { Link, useLocation } from "wouter";
-import useGifs from "../hooks/useGifs";
-import ListOfGifs from "./ListOfGifs";
-
 export default function Menu() {
     const[keyword,setKeyword]=useState("");
     const [path,pushLocation] = useLocation();
-    const gifs=useGifs();
 
     const handleSubmit=(e)=>{
        e.preventDefault();
@@ -26,7 +22,6 @@ export default function Menu() {
         <Link to='/gif/perezoso'>🦥</Link>
         <Link to='/gif/raton'>🐀</Link>
         <h3>Ultima busqueda</h3>
-        <ListOfGifs/>
     </section>
     )
 }
