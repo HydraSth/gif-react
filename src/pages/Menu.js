@@ -21,7 +21,6 @@ export default function Menu() {
         <Link to='/gif/pizza'>🍕</Link>
         <Link to='/gif/perezoso'>🦥</Link>
         <Link to='/gif/raton'>🐀</Link>
-        <h3>Ultima busqueda</h3>
     </section>
     )
 }

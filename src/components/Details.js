@@ -8,24 +8,29 @@ export default function GifDetails({ params }) {
 	const [seleccionado, setSeleccionado] = useState()
 
 	useEffect(() => {
-		getGifs({ keyword })
-		.then((response) => {
+		getGifs({ keyword }).then((response) => {
 			const obje = response.filter((gif) => {
 				return gif.id === id
 			})
-		setSeleccionado(obje[0])
+			setSeleccionado(obje[0])
 		})
 	}, [id, keyword])
 
-    const [showModal, setShowModal] = useState(false);
+	const [showModal, setShowModal] = useState(false)
 
-    function handleCopy() {
-      navigator.clipboard.writeText(window.location.href);
-      setShowModal(true);
-      setTimeout(() => {
-        setShowModal(false);
-      }, 3000);
-    }
+	function handleCopy() {
+		navigator.clipboard.writeText(window.location.href)
+		.then(() => {
+		  console.log("URL copiada al portapapeles");
+		  setShowModal(true)
+		  setTimeout(() => {
+			  setShowModal(false)
+		  }, 3000)
+		})
+		.catch((error) => {
+		  console.error("Error al copiar la URL: ", error);
+		});	  
+	}
 
 	return (
 		<>
@@ -37,16 +42,16 @@ export default function GifDetails({ params }) {
 					<video muted autoPlay loop src={seleccionado.mp4} />
 					<h6>id:{seleccionado.id}</h6>
 					<button onClick={handleCopy}>Compartir</button>
-                    {showModal && (
-                        <div className="modal">
-                           <p>¡Link copiado al portapapeles!</p>
-                        </div>
-                    )}
+					{showModal && (
+						<div className="modal">
+							<p>¡Link copiado al portapapeles!</p>
+						</div>
+					)}
 				</section>
 			) : (
-                <section className="loader">
-                    <NewtonsCradle size={40} speed={1.4} color="black" />
-                </section>
+				<section className="loader">
+					<NewtonsCradle size={40} speed={1.4} color="black" />
+				</section>
 			)}
 		</>
 	)
