@@ -14,7 +14,7 @@ export default function Menu() {
 
     return(
     <section className='menu'>
-        <a href='/'>Gif App</a>
+        <a href='/gif-react/'>Gif App</a>
         <form onSubmit={handleSubmit}>
             <input type="text" placeholder="Search" value={keyword} onChange={handleChange}/>
         </form>

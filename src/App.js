@@ -15,7 +15,7 @@ function App() {
 			<div className="container">
 				<Route path="/gif/:keyword" component={SearchResults} />
 			</div>
-			<Route path="/" component={RecentGifs} />
+			<Route path="/(|gif-react/)" component={RecentGifs} />
 			<Route path="/gif/:keyword/:id" component={GifDetails} />
 		</section>
 	)
