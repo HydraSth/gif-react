@@ -1,16 +1,18 @@
 import "./App.css"
 import React from "react"
-import { Route, HashRouter } from "wouter"
+import { Route, Router } from "wouter"
 import SearchResults from "./components/SearchResults"
 import GifDetails from "./components/Details"
+import { createHashHistory } from 'history';
 import Menu from "./pages/Menu"
 import {RecentGifs} from "./components/RecentGifs"
 
 import ColorApp from "./components/ColorApp"
 
 function App() {
+	const hashHistory = createHashHistory();
 	return (
-		<HashRouter>
+		<Router history={hashHistory}>
 			<section className="bodyCenter">
 				<Menu />
 				<div className="container">
@@ -19,7 +21,7 @@ function App() {
 				<Route path="/gif-react/" component={RecentGifs} />
 				<Route path="/gif/:keyword/:id" component={GifDetails} />
 			</section>
-		</HashRouter>
+		</Router>
 	)
 }
 
