@@ -6,7 +6,7 @@ export default function Menu() {
 
     const handleSubmit=(e)=>{
        e.preventDefault();
-       pushLocation(`/gif/${keyword}`);
+       pushLocation(`/gif-react/gif/${keyword}`);
     }
     const handleChange=(e)=>{
         setKeyword(e.target.value);
@@ -18,9 +18,9 @@ export default function Menu() {
         <form onSubmit={handleSubmit}>
             <input type="text" placeholder="Search" value={keyword} onChange={handleChange}/>
         </form>
-        <Link to='/gif/pizza'>🍕</Link>
-        <Link to='/gif/perezoso'>🦥</Link>
-        <Link to='/gif/raton'>🐀</Link>
+        <Link to='/gif-react/gif/pizza'>🍕</Link>
+        <Link to='/gif-react/gif/perezoso'>🦥</Link>
+        <Link to='/gif-react/gif/raton'>🐀</Link>
     </section>
     )
 }

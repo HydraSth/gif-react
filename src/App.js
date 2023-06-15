@@ -13,11 +13,10 @@ function App() {
 		<section className="bodyCenter">
 			<Menu />
 			<div className="container">
-				<Route path="/gif/:keyword" component={SearchResults} />
+				<Route path="/gif-react/gif/:keyword" component={SearchResults} />
 			</div>
 			<Route path="/gif-react/" component={RecentGifs} />
-			<Route path="/" component={RecentGifs} />
-			<Route path="/gif/:keyword/:id" component={GifDetails} />
+			<Route path="/gif-react/gif/:keyword/:id" component={GifDetails} />
 		</section>
 	)
 }
