@@ -5,13 +5,13 @@ import SearchResults from "./components/SearchResults"
 import GifDetails from "./components/Details"
 import Menu from "./pages/Menu"
 import {RecentGifs} from "./components/RecentGifs"
-
 import ColorApp from "./components/ColorApp"
 
 function App() {
 	return (
 		<section className="bodyCenter">
 			<Menu />
+			<Route path="/gif-react/test-color" component={ColorApp} />
 			<div className="container">
 				<Route path="/gif-react/gif/:keyword" component={SearchResults} />
 			</div>

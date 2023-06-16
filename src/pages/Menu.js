@@ -1,5 +1,8 @@
 import React,{useState} from "react";
 import { Link, useLocation } from "wouter";
+import logo from "./logo192.png"
+import "./menu.css"
+
 export default function Menu() {
     const[keyword,setKeyword]=useState("");
     const [path,pushLocation] = useLocation();
@@ -14,7 +17,7 @@ export default function Menu() {
 
     return(
     <section className='menu'>
-        <a href='/gif-react/'>Gif App</a>
+        <img src={logo} alt="logo"/>
         <form onSubmit={handleSubmit}>
             <input type="text" placeholder="Search" value={keyword} onChange={handleChange}/>
         </form>
